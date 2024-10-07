@@ -7,12 +7,14 @@ import "./index.css";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import ErrorPage from "./pages/ErrorPage";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
 //=== Pages ===//
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <SignIn />,
     errorElement: <ErrorPage />,
   },
   {
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
   {
     path: "/profile",
     element: <Profile />,
+  },
+  {
+    path: "/signIn",
+    element: <SignIn />,
+  },
+  {
+    path: "/signUp",
+    element: <SignUp />,
   },
 ]);
 

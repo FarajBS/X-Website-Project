@@ -39,8 +39,23 @@ export default function Profile() {
                             />
                         </div>
 
+                        <div className="flex justify-end items-start px-5 relative mb-5">
+                            <div className="absolute bottom-0 right-2">
+                                <img
+                                    className="rounded-full w-40 h-40 border-8 border-black"
+                                    src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDQ0NDQ0IBw0IDQ0HCAcHBw8IDQgNFREWFhURExMYHSggGBoxGxMTITEhMSkrLi4uFx8zODMsNygtLisBCgoKBQ0NGg0FDisZExkrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAKoBKQMBIgACEQEDEQH/xAAZAAEBAQEBAQAAAAAAAAAAAAACAwEABAX/xAAYEAEBAQEBAAAAAAAAAAAAAAABAAIREv/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwD43LS60INCRcWkGhaFwTCDAmFwTCDDMjMjM85gJmeczMzMwAzIzMzIIAZlyXLfMA5byfm3zBPl3Knm3zBLl3Knm7zBLljmr5s5BFIua3LHMHn1mDm9DmDmDzuYJejWaeswRSKVUgkE0ilRIsE0ilRgkAuk2cg4kFhIg0kFhMg4JhYE8kG5KmS7JPJBuczC4KgQYZmFwTCDAkFoSCAhbyYW8gHLeT82+YJ+bfNTzd5gly7lTzd5gkliVUikEnMUrcikEUilZIJBDRDWa6QSDz6zTS9GilogikUqJFIJJFKiRYJpZJIwK0skQaTIk8wLJUyRyVMkCyVckclQINCYWZJ5INCYWBMIOCQWhMICEgkEggIXcmFvIB5u5U5dyCfmzlXliQS5FK3IpBFIpWSCQRSKVUgkEkhoqpDRBHRT0VtFPRBDRTSvopaIJJFqMGCbZyTZB0iJIgRUIZqZgWauSnmtmBhMiTzAyZHMyBEwsCZBoTCwKgQcEguCYQEJeZBbyA8u5LlvIJ8s5U5ZyCfIpVSKQSSCVWGiCWiCVdU2CTDRVSCQS1T0VUp6II6KWivopaIIsGpqDBNskx5BhIiSIHmpmGZ5grirmliqQMqECZBTMyGZkFMzIZqEDJkCpmBEyBMg0JcsJQcF3LboM5FJxgDFmxYJ6g1GDBNptXVPUE2DUabBPUNT1DUEtU9VdUtQR1TauqWoA2WsYMJESRBQmUyoQWxUzSw1cwUKhSKhBTM808zILEyllqZgoVBpEyCmZlMZDBQtiNowK6zt3YNsbO2dg5i2rBYMYNumCwFhqTDTAdU2bTYBqGp6aeoJ6p6qapagnqk1NNNgDGTGAkiAyIKZqZpZqZgrlq5o5q5YKlTNInlgrlmUhqDBXLMpDPLBUZjSGQwWGQ0hl2Co2+qQ29gr27tPt3YH2xY9s7Alise2LByxW5YLBiwW1YLBjBtWGmArDUmnpgGqepaYaYJ6ps9NNgLHtrZASRAZEDKmWkTywVGrloDUywXGZRy1RgqMhpDMYLDIaQzGCoyGkMhgsMhojIYKjb2kNvYKdu7T7b2B9s7D1Y6gfYrH1YsGrFbFisGrBblgsHLBbdMFgxaem3TT0wFaepLT0wFYaksGDGNqx7AZDCQwMkMCQwUGY0hmMFstXLefLUGC4zGiMxgqMxojMYKDMaIy7BUZdpGrfUFfVvql6t7BT1b6pdu7BT1Z6h2zsDWxYds7AlsWKxWBdgtixWDVgtyw1qDtNLTasFgzTT02rBYMYtrFYC2dubIDaRtgYyIEhgZMaQyGCozGkMhgtlqGqAyNQegZDQNTNQWGQ0TUhgqNvaXbRgr23tLt3qCvbu0/V3qCnbOw7Z2Cix7HtiwJ1FYurFgSxWLqDqBLBbHUFg1aa3LFYOWC2rFgxitqwWDmy66A3WWwaSGNpAxtGJaQPshgWkFBkNMkQUGZqjIgsakaokiCxq31RJEFvV3qmWwPt3qF0D9WeoXMCdWOo2QJ1F1GLBrqLqxiwa6itjYwcsVusgxbFuYsGdsubCDru2XQf//Z" 
+                                    alt="Img" 
+                                />
+                            </div>
+
+                            <div className="border-2 border-gray-500 w-fit h-fit mt-5 py-2 px-4 rounded-full">
+                                <h2 className="text-white text-xl">تعديل الملف الشخصي</h2>
+                            </div>
+                        </div>
+
+
                         <div className="pr-5">
-                            <h2 className="text-white text-2xl">الاسم</h2>
+                            <h2 className="text-white text-2xl">{localStorage.getItem("name")}</h2>
 
                             <p className="mt-5 text-gray-500 mb-2"> <i className="fa-solid fa-calendar-days"></i> انضم في ديسمبر  2015</p>
 
@@ -78,9 +93,9 @@ export default function Profile() {
                                     </div>
 
                                     <div className="flex">
-                                        <h1 className="text-white text-lg hidden lg:block">الاسم</h1>
+                                        <h1 className="text-white text-lg hidden lg:block">{localStorage.getItem("name")}</h1>
                                         <span className="mx-1 text-white text-lg hidden lg:inline-block"> | </span>
-                                        <h4 className="text-white text-lg">اسم المستخدم</h4>
+                                        <h4 className="text-white text-lg">{localStorage.getItem("username")}</h4>
                                         <h5 className="mr-2 text-white text-lg">12 يونيو</h5>
                                     </div>
                                 </div>
@@ -101,6 +116,17 @@ export default function Profile() {
                                 src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
                                 alt="img" />
                             </figure>
+
+                            <div className="my-2 flex items-center justify-between">
+                                <span className="text-gray-400 text-xl"><i className="fa-regular fa-comment fa-fw text-gray-400 text-xl"></i> 332</span>
+                                <span className="text-gray-400 text-xl"><i className="fa-solid fa-retweet fa-fw text-gray-400 text-xl"></i> 420 </span>                          
+                                <span className="text-gray-400 text-xl"><i className="fa-regular fa-heart fa-fw text-gray-400 text-xl"></i> 2.2k</span>                     
+                                <span className="text-gray-400 text-xl"><i className="fa-solid fa-chart-simple fa-fw text-gray-400 text-xl"></i> 4.5k</span>  
+                                <div>                    
+                                    <span className="text-gray-400 text-xl"><i className="fa-regular fa-bookmark fa-fw text-gray-400 text-xl"></i> </span>
+                                    <span className="text-gray-400 text-xl"><i className="fa-solid fa-upload fa-fw text-gray-400 text-xl"></i> </span>
+                                </div>                   
+                            </div>
                         </div>
                     </div>
                     {/*=== All Tweets ===*/}
@@ -200,11 +226,11 @@ export default function Profile() {
                         </div>
 
                         <div className="border-2 border-x-gray-300  w-3/4 p-3 rounded-xl">
-                            <h2 className="text-white text-2xl font-semibold mb-2">ماذا يحدث</h2>
+                            <h2 className="text-white text-2xl font-semibold mb-8">ماذا يحدث</h2>
 
                             {/* Trend 1 */}
                             <Link to="/home">
-                                <div className="mb-8">
+                                <div className="mb-5">
                                     <div className="flex justify-between items-start mb-1">
                                         <p className="text-sm text-gray-500">المملكة العربية السعودية</p>
 
@@ -222,7 +248,7 @@ export default function Profile() {
 
                             {/* Trend 2 */}
                             <Link to="/home">
-                                <div className="mb-8">
+                                <div className="mb-5">
                                     <div className="flex justify-between items-start mb-1">
                                         <p className="text-sm text-gray-500">المملكة العربية السعودية</p>
 
@@ -240,7 +266,7 @@ export default function Profile() {
 
                             {/* Trend 3 */}
                             <Link to="/home">
-                                <div className="mb-8">
+                                <div className="mb-5">
                                     <div className="flex justify-between items-start mb-1">
                                         <p className="text-sm text-gray-500">المملكة العربية السعودية</p>
 
@@ -258,7 +284,7 @@ export default function Profile() {
 
                             {/* Trend 4 */}
                             <Link to="/home">
-                                <div className="mb-8">
+                                <div className="mb-5">
                                     <div className="flex justify-between items-start mb-1">
                                         <p className="text-sm text-gray-500">المملكة العربية السعودية</p>
 
@@ -276,7 +302,7 @@ export default function Profile() {
 
                             {/* Trend 5 */}
                             <Link to="/home">
-                                <div className="mb-8">
+                                <div className="mb-5">
                                     <div className="flex justify-between items-start mb-1">
                                         <p className="text-sm text-gray-500">المملكة العربية السعودية</p>
 

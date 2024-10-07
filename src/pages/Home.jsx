@@ -1,7 +1,17 @@
 import { Link } from "react-router-dom"
 import Sidebar from "../components/Sidebar"
+import { useNavigate } from "react-router-dom"
+
 
 export default function Home() {
+
+    const navigate = useNavigate();
+
+    if (localStorage.getItem("username") === null) {
+        navigate("/signIn")
+    };
+
+
     return (
         <div className="bg-black flex pt-5">
             {/* Right Section */}
@@ -14,7 +24,7 @@ export default function Home() {
             {/* Main Section */}
             <div className="md:w-9/12 lg:w-5/12 h-ful">
                 {/* For You Or Your Followers */}
-                <div className="flex flex-row justify-evenly border-b-2 border-r-2 border-l-2 border-gray-300">
+                <div className="flex flex-row justify-around border-b-2 border-r-2 border-l-2 border-gray-300">
                     <Link to="/home"><h2 className="text-xl font-semibold text-white border-b-4 border-[#1B8FDD] p-5">لك</h2></Link>
                     <Link to="/home"><h2 className="text-xl font-semibold text-white p-5">متابعون</h2></Link>
                 </div>
@@ -35,7 +45,7 @@ export default function Home() {
 
                             <div className="w-full">
                                 <div>
-                                    <textarea className="w-full h-full text-2xl bg-black text-white" placeholder="ماذا يحدث ؟!"></textarea>
+                                    <textarea className="w-full h-full text-2xl focus:outline-none resize-none bg-black text-white" placeholder="ماذا يحدث ؟!"></textarea>
                                 </div>
 
                                 <div className="flex justify-between items-baseline">
@@ -72,9 +82,9 @@ export default function Home() {
                                 </div>
 
                                 <div className="flex">
-                                    <h1 className="text-white text-lg hidden lg:block">الاسم</h1>
+                                    <h1 className="text-white text-lg hidden lg:block">{localStorage.getItem("name")}</h1>
                                     <span className="mx-1 text-white text-lg hidden lg:inline-block"> | </span>
-                                    <h4 className="text-white text-lg">اسم المستخدم</h4>
+                                    <h4 className="text-white text-lg">{localStorage.getItem("username")}</h4>
                                     <h5 className="mr-2 text-white text-lg">12 يونيو</h5>
                                 </div>
                             </div>
@@ -95,6 +105,17 @@ export default function Home() {
                             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
                             alt="img" />
                         </figure>
+
+                        <div className="my-2 flex items-center justify-between">
+                            <span className="text-gray-400 text-xl"><i className="fa-regular fa-comment fa-fw text-gray-400 text-xl"></i> 332</span>
+                            <span className="text-gray-400 text-xl"><i className="fa-solid fa-retweet fa-fw text-gray-400 text-xl"></i> 420 </span>                          
+                            <span className="text-gray-400 text-xl"><i className="fa-regular fa-heart fa-fw text-gray-400 text-xl"></i> 2.2k</span>                     
+                            <span className="text-gray-400 text-xl"><i className="fa-solid fa-chart-simple fa-fw text-gray-400 text-xl"></i> 4.5k</span>  
+                            <div>                    
+                                <span className="text-gray-400 text-xl"><i className="fa-regular fa-bookmark fa-fw text-gray-400 text-xl"></i> </span>
+                                <span className="text-gray-400 text-xl"><i className="fa-solid fa-upload fa-fw text-gray-400 text-xl"></i> </span>
+                            </div>                   
+                        </div>
                     </div>
                 </div>
                 {/*=== All Tweets ===*/}
@@ -129,11 +150,11 @@ export default function Home() {
                     </div>
 
                     <div className="border-2 border-x-gray-300  w-3/4 p-3 rounded-xl">
-                        <h2 className="text-white text-2xl font-semibold mb-2">ماذا يحدث</h2>
+                        <h2 className="text-white text-2xl font-semibold mb-8">ماذا يحدث</h2>
 
                         {/* Trend 1 */}
                         <Link to="/home">
-                            <div className="mb-8">
+                            <div className="mb-5">
                                 <div className="flex justify-between items-start mb-1">
                                     <p className="text-sm text-gray-500">المملكة العربية السعودية</p>
 
@@ -151,7 +172,7 @@ export default function Home() {
 
                         {/* Trend 2 */}
                         <Link to="/home">
-                            <div className="mb-8">
+                            <div className="mb-5">
                                 <div className="flex justify-between items-start mb-1">
                                     <p className="text-sm text-gray-500">المملكة العربية السعودية</p>
 
@@ -169,7 +190,7 @@ export default function Home() {
 
                         {/* Trend 3 */}
                         <Link to="/home">
-                            <div className="mb-8">
+                            <div className="mb-5">
                                 <div className="flex justify-between items-start mb-1">
                                     <p className="text-sm text-gray-500">المملكة العربية السعودية</p>
 
@@ -187,7 +208,7 @@ export default function Home() {
 
                         {/* Trend 4 */}
                         <Link to="/home">
-                            <div className="mb-8">
+                            <div className="mb-5">
                                 <div className="flex justify-between items-start mb-1">
                                     <p className="text-sm text-gray-500">المملكة العربية السعودية</p>
 
@@ -205,7 +226,7 @@ export default function Home() {
 
                         {/* Trend 5 */}
                         <Link to="/home">
-                            <div className="mb-8">
+                            <div className="mb-5">
                                 <div className="flex justify-between items-start mb-1">
                                     <p className="text-sm text-gray-500">المملكة العربية السعودية</p>
 
@@ -224,6 +245,21 @@ export default function Home() {
                 </div>
             </div>
             {/*=== Left Section ===*/}
+
+            {/* Message */}
+            <div className="lg:flex justify-between items-center w-3/12 fixed bottom-0 left-0 bg-black p-4  shadow-inner shadow-gray-500 rounded-xl hidden">
+                <div>
+                    <h2 className="text-white text-xl font-semibold">الرسائل</h2>
+                </div>
+
+                <Link to="/home">
+                    <div className="flex items-center justify-center">
+                        <span><i className="fa-solid fa-envelope fa-fw text-white text-xl ml-3"></i></span>
+                        <span><i className="fa-solid fa-angles-up fa-fw text-white text-xl"></i></span>
+                    </div>
+                </Link>
+            </div>
+            {/*=== Message ===*/}
         </div>
     )
 };
