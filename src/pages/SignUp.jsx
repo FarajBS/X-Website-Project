@@ -16,10 +16,14 @@ export default function SignUp() {
     const navigate = useNavigate();
 
     useEffect(() => {
+        if (localStorage.getItem("username") !== null) {
+            navigate("/home")
+        };
         axios.get('https://66f16df8415379191550df7c.mockapi.io/users')
         .then((response) => {
             setUsers(response.data)
         });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const signUp = () => {

@@ -27,7 +27,7 @@ export default function Sidebar() {
                                 </div>
                             </ul>
 
-                                <div className="w-full flex justify-between items-center mt-16">
+                                <div className="w-full flex flex-col md:flex-row md:flex-wrap gap-y-5 justify-between items-center mt-16">
                                     <Link to="/profile">
                                         <div className="flex">
                                             <div>
@@ -46,7 +46,7 @@ export default function Sidebar() {
                                     </Link>
 
                                     <div>
-                                        <span onClick={() =>  {localStorage.clear(); navigate("/signIn")}} className="text-3xl text-white hidden lg:inline-block"><i className="fa-solid fa-right-from-bracket fa-fw text-3xl mb-2 ml-3 text-white"></i></span>
+                                        <span onClick={() =>  {localStorage.clear(); navigate("/signIn")}} className="text-3xl text-white"><i className="fa-solid fa-right-from-bracket fa-fw text-3xl mb-2 ml-3 text-white"></i></span>
                                     </div>
                                 </div>
                         </div> 
